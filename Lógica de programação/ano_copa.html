@@ -1,0 +1,30 @@
+<meta charset="utf-8">
+
+<script>
+	
+	function pulaLinha(){
+		document.write("<br>");
+		document.write("<br>");
+	}
+
+	function mostra(frase){
+		document.write(frase);
+		pulaLinha();
+	}
+
+	//aula: repetir enquanto
+
+	var anoCopa = 1930;
+	var limite = parseInt(prompt("Entre com um ano limite"));
+	//vai aparcer um poup up com todos os anos da copa de 1930 até 2016
+	while(anoCopa <= limite){
+		mostra("Teve copa em " + anoCopa);
+		anoCopa = anoCopa + 4;
+	}
+
+	mostra("FIM")
+
+
+
+
+</script>

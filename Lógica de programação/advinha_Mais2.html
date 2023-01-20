@@ -1,0 +1,81 @@
+<meta charset="utf-8">
+
+<input/>
+<button>Compare com o meu segredo</button>
+
+<script>
+
+	//é mt chato chamar math round e random toda hora, criamos uma função para isso
+	function sorteia(){
+		return Math.round(Math.random()*10);
+	}
+
+	function sorteiaNumeros(quantidade){
+
+		var segredos = [];
+		var numero = 1;
+
+		while (numero <= quantidade){
+			var numeroAleatorio = sorteia();
+			achou = false;
+
+			for (var posicao = 0; posicao < segredos.length; posicao++){
+
+				if(segredos[posicao] == numeroAleatorio){
+					achou = true;
+					break
+				}
+
+			}
+
+			if(achou == false){
+				segredos.push(numeroAleatorio);
+			}
+			
+			numero++;
+		}
+
+		return segredos;
+	}
+	//melhorar o jogo dando mais oportunidade de acerto e manipulando arquivos
+	//eu quero que essa variavel guarde uma lista de valores
+	//novo tipo de  dados - array. []
+	//se a varivael é um array tem como boa pratica colocar o nome dela no plural
+	var segredos = sorteiaNumeros(3); //essa função tem que me devolver um lista de segredos, e como parametros a qtd de sgredos que eu quero que ela gere
+
+	//segredos.push(10);// puxe é uma função e signifca empurrar(quero empurrar quem p dentro do array vc passa como parametro)
+
+
+	console.log(segredos);//teste. mostra uma msg secreta p o desenvolvedor. tudo que vc passa p ele vc so ver se abrir o console do navegador
+
+	var input = document.querySelector("input");
+	input.focus();
+
+	//funcao vai ter que percorrer o segredos para verificar
+	function verifica(){
+		var achou = false;
+
+		for (var posicao = 0; posicao < segredos.length; posicao++){
+			if(input.value == segredos[posicao]){
+				alert("vc acertou");
+				achou = true;
+				break
+			}
+		}
+
+		if(achou == false){
+			alert("vc errou");
+		}
+		input.value = "";
+		input.focus(); 
+	}
+
+	
+	var button = document.querySelector("button");
+
+	
+	button.onclick = verifica; 
+
+	//esse codigo esta incompleto apenas para comentario, codigo completo no arquivo codigoAaula_Advinha2.html
+
+</script>

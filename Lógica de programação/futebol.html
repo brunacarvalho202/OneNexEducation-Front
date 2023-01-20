@@ -1,0 +1,52 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	function pulaLinha(){
+		document.write("<br>");
+	}
+
+	function mostra(frase){
+		document.write(frase);
+		pulaLinha();
+	}
+
+	//lógica para calcular os pontos: 1 vitoria vale 3 pontos e o empate vale 1 ponto, ent vou multiplicar vitoria x 3 e somar com empates
+
+	//dessa forma não funciona:
+
+	//var vitorias = prompt("Digite a qtd de vitórias");
+	//var empates = prompt("Digite o número de empates");
+	//var pontos = vitorias * 3 + empates;
+	//mostra("Os pontos do seu time é " + pontos);
+
+	//a função prompt sempre retorna oq vc leu como texto/string
+
+	// quando vc faz uma operação de * ou / com um numero ainda em texto o javascript transforma ele para numero, mas na + ele faz uma concatenação pq considera como um texto mesmo
+
+	//é uma boa pratica garantir que o retorno do prompt vai ser um numero e nao uma string, caso vc queira
+
+	//converter uma string em numero com a função parseint(texto)
+
+	var vitorias = parseInt(prompt("Digite a qtd de vitórias"));
+	var empates = parseInt(prompt("Digite o número de empates"));
+	var pontos = (vitorias * 3) + empates;
+	mostra("Os pontos do seu time é " + pontos);
+
+	//A função prompt retorna o que digitamos como string e esse retorno é passado para parseInt. É esta função que recebe uma string e a converte para número. Agora, como temos dois números ligados, não acontecerá mais a concatenação, mas sim a soma.
+
+	//obs: Quando parseInt recebe um número e não uma string, ele devolve o mesmo número, ou seja, não realiza conversão alguma. Não dá erro, funciona.
+
+	//TRABALHANDO COM CONDIÇÕES
+	if(pontos > 28){
+		mostra("Seu time está melhor do que o ano passado");
+	}
+	if (pontos < 28){
+		mostra("Seu time está pior do que o ano passado");
+	}
+	if (pontos == 28){
+		mostra("Seu time está igual do que o ano passado");
+	}
+
+	mostra("FIM");
+
+</script>

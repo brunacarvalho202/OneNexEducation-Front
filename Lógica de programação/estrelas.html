@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<script>
+
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function mostra(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    for(var linha = 1; linha <=50; linha++){
+
+        for (var coluna = 1; coluna <= 180; coluna++){
+            document.write("*"); //docum.writ p nao pular linha
+        }
+        pulaLinha();
+    }
+    
+</script>

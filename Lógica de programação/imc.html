@@ -1,0 +1,53 @@
+<meta charset="utf-8">
+<script>
+	function mostra (frase){
+		document.write(frase);
+	}
+
+	//function calculaImc(peso,altura){
+	//	var imc = peso/(altura*altura);
+	//	return imc;
+	//}
+
+	//var imcFlavio = calculaImc(73,1.71);
+	//mostra(imcFlavio)
+
+	//entendendo a fundo retorno de função
+	//da no mesmo fazer a funçaõ da forma abaixo
+
+	function calculaImc(peso,altura){
+		
+		return peso/(altura*altura);
+	}
+
+	//quem vai usar/chama a função é que escolhe se vai exibir na tela , nao posso ja deixar na função a saída. 
+
+	//interagindo com usuário
+
+	//prompt é uma função do javascript que recebe como parametro a pergunta que eu quero fazer p o usuario
+
+	//o prompt é uma função que retorna um valor, que é oq o usuario digitou. captura a entrada do usuario
+
+	//a variavel altura vai receber o retorno do prompt
+	var nome = prompt("Informe seu nome");
+	var alturaInformada = prompt(nome + ", Informe sua altura");
+	var pesoInformado = prompt(nome + ", Informe seu peso");
+
+	var imc = calculaImc(alturaInformada, pesoInformado);
+
+	mostra(nome + ", O IMC calculado é " + imc);
+
+	//Se quisermos exibir um pop-up, que mostre uma pergunta e permita ao usuário entrar com um valor, fazemos uso da função prompt.
+
+	if(imc < 18.5){
+		mostra("abaixo do peso");
+	}
+
+	if(imc > 35 ){
+		mostra("acima do peso");
+	}
+
+	if(imc >= 18.5 && imc <= 35){	
+			mostra("na média");
+	}
+</script>

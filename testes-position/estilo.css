@@ -1,0 +1,34 @@
+
+.estatico {
+	position: static;
+	color: red;
+	right: 50px;
+}
+
+.fixado1 {
+	position: fixed;
+	color: blue;
+	right: 0;
+	top: 60%;
+}
+
+.relativo1 {
+	position: relative;
+	color: black;
+	left: 40%; 
+}
+
+
+.pai {
+	position: relative;
+	background-color: greenyellow;
+	left: 20%;
+	right: 20%;
+	height: 100px;
+	width: 500px;
+}
+
+.filho {
+	position: absolute;
+	background-color: grey;
+}

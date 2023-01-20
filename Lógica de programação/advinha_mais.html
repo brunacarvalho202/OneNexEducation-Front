@@ -1,0 +1,55 @@
+<meta charset="utf-8">
+
+<input/>
+<button>Compare com o meu segredo</button>
+
+<script>
+	//campo de texto e botão
+	//objetivo: digite um numero no campo e apertar no botao para ver se acerta ou nao o numero pensado (segredo)
+
+	//eu tenho que acessar o input que esta no mundo html
+
+	//vc diz no queryselector p documento, pega la no mundo html essa tag e joga na variavel input p eu trabalhar com ela no mundo javascript, só que queryselector nao fez curso mae dina para saber qual tag voce quer trabalhar por isso ele receber como parametro o nome da tag. 
+	//o nome da variavel pode ser qualquer um, só no parametro que tem que ser o nome igual da tag 
+	var input = document.querySelector("input");// com isso o js sai do mundo jsvai la no input e pega ele p eu trabalhar 
+
+	input.focus() //deixar o input destacado assim que eu recarrego a pagina 
+
+	//p saber o valor que ta la na caixinha, la no input, eu tenho que fazer input.value:
+	//input.value
+	// eu quero comparar se o input.value que é o valor digitado na caixinha é igual ao meu segredo, ent eu crio uma variavel para segredo
+	var segredo = Math.round(Math.random() * 10);
+
+	//if(input.value == segredo){
+	//	alert("vc acertou");
+	//} else {
+	//	alert("vc errou");
+	//}
+
+	//mas se eu entrar no programa assim, ele diz que eu errei antes de inserir o numero, pq? pq esse teste só pode ser feito se eu apertar no botao, e nao ser feito assim que eu carrego a minha pagina
+
+	//o verifique esta guardado ara ser chamado dps
+	function verifica(){
+		if(input.value == segredo){
+			alert("vc acertou");
+		} else {
+			alert("vc errou");
+		}
+
+		input.value = "";
+		input.focus(); //melhorando usabilidade: para quando eu apertar ok e voltar o campo em branco para escrever a caixinha ficar destacada em azul como se tivesse me chamando para escrever
+	}
+
+	//vc quer que esse verifica seja chamado se clicar no botao
+
+	//pegar o botao do html para o mundo js
+	var button = document.querySelector("button");
+
+	//no clicar (onclick) a gnt quer que ele verifuqe()
+	button.onclick = verifica; //verifica sem os () pq eu nao quero chamar a função e sim ter acesso apenas ao codigo dela p ser guardado no click no botao
+	//é como se o botao precisasse saber oq vai fazer quando for clicado e para isso ele tem uma instrução guardada nele que nesse caso é a verifica
+
+	//resumo: veja que no mundo javascript eu consigo capturar os elementos do mundo html verificar o valor desses elementos e tb associar um clique de botao a execução de uma função
+
+	//melhorando a usabilidade: limpar o campo dps que vc digita para digitar novamente se quiser. eu volto agr na função e digo que o input.value que tava guardando oq eu digitei lá agr recebe uma string vazia (input.value = "";)
+</script>
